@@ -11,5 +11,6 @@ class BlockTests extends FunSuite {
     val currentBlock = Block(5, "current block hash", "current block data")
     val nextBlock = currentBlock.mineNextBlock("next block data")
     assert(nextBlock.index == currentIndex + 1)
+    assert(Block.blockChain.head == nextBlock)
   }
 }
